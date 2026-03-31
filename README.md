@@ -10,7 +10,7 @@ It includes the following :
 - F5 XC SMSv2 site with CE  
 
 
-# Requierment:
+# Requirement:
 The script in this repo needs to be run on a machine with following software installed and environment variable defined:  
 * Git
 * Terraform  
@@ -38,7 +38,9 @@ Most of those variables have value, but not all (like azure subscritpion details
 
 # How to deploy  
 1/ Git clone the repo on a machine meeting the requirements.  
-2/ Then go in the folder to execute Terraform command:  
+2/ Rename **terraform.tfvars.expl** into **terraform.tfvars**.  
+3/ Edit **terraform.tfvars** to define relevant value of all variables (most of those variables have value, but not all, like azure subscritpion details).  
+4/ Execute Terraform deployment with command:  
 ```terraform init``` to initialize the project and download Terraform component (based on used provider)  
 ```terraform plan``` to check the deployment  
 ```terraform apply```to launch the deployment if plan is successful  
