@@ -32,10 +32,9 @@ Certificate password must be configured through OS environnement variable ```VES
 Linux VM does allow ssh connection with password. This require a password to be set. For a minimum of security, the password is in an environment variable called ```TF_VAR_azure_adminpassword```. This variable has to be created before launching Terraform deployment.  
 
 # Before deployment  
-Before launching the Terraform deployment, you must car about variable values.  
-Those variable values are stored in **terraform.tfvars**.  
-This repo brings an example of this file and is called **terraform.tfvars.expl**.
-
+After cloning the repo, and before launching the Terraform deployment, you must rename **terraform.tfvars.expl** into **terraform.tfvars**.  
+Then edit **terraform.tfvars** to define relevant value of all variables.  
+Most of those variables have value, but not all (like azure subscritpion details).
 
 # How to deploy  
 1/ Git clone the repo on a machine meeting the requirements.  
