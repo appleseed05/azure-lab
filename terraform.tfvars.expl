@@ -3,6 +3,13 @@ azure_tenant-id = "<azure-tenant-id>"
 azure_client-id = "<azure-client-id>"
 azure_client-secret = "<azure-client-secret>"
 
+allowed-pips = ["1.2.3.4", "5.6.7.8"]
+
+f5xc_api-p12-file = "<path-of-certificate-file-on-local-machine"
+
+f5xc_namespace-name = "<my-xc-namespace>"
+
+
 azure_region = "France Central"
 azure_tag-owner = "John DOE"
 azure_tag-env = "lab"
@@ -57,12 +64,9 @@ azure_vm-int = "my-lab-vm-int"
 azure_vm-jmp = "my-lab-vm-jmp"
 azure_vm-xc-ce = "my-lab-vm-xc-ce"
 
-tls_ssh-key-path-private-win = ".\\my-ssh-key-ed25519"
-tls_ssh-key-path-public-win = ".\\my-ssh-key-ed25519.pub"
-allowed-pips = ["1.2.3.4", "5.6.7.8"]
+tls_ssh-key-path-private-win = "./my-ssh-key-ed25519"
+tls_ssh-key-path-public-win = "./my-ssh-key-ed25519.pub"
 
-f5xc_api-p12-file = "<path-of-certificate-file-on-local-machine"
 f5xc_api-url = "https://f5-emea-ent.console.ves.volterra.io/api"
 f5xc_smsv2-site-name = "my-smsv2-site"
 f5xc_smsv2-site-token = "my-smsv2-token"
-f5xc_namespace-name = "<my-xc-namespace>"
