@@ -142,7 +142,7 @@ variable "azure_admin-username" {
   default     = "f5user"
 }
 
-variable "azure_admin-password" {
+variable "azure_adminpassword" {
   type          = string
   description   = "Azure resources type password for admin account"
   sensitive     = true
