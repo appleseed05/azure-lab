@@ -1,0 +1,68 @@
+azure_sub-id = "<azure-subcription-id>"
+azure_tenant-id = "<azure-tenant-id>"
+azure_client-id = "<azure-client-id>"
+azure_client-secret = "<azure-client-secret>"
+
+azure_region = "France Central"
+azure_tag-owner = "John DOE"
+azure_tag-env = "lab"
+
+azure_rg = "my-lab-rg"
+azure_vnet = "my-lab-vnet"
+azure_sub-ext = "my-lab-sub-ext"
+azure_sub-int = "my-lab-sub-int"
+azure_sub-adm = "my-lab-sub-adm"
+azure_sub-jmp = "my-lab-sub-jmp"
+
+azure_cidr-vnet = "10.1.0.0/16"
+azure_cidr-sub-ext = "10.1.10.0/24"
+azure_cidr-sub-int = "10.1.20.0/24"
+azure_cidr-sub-adm = "10.1.30.0/24"
+azure_cidr-sub-jmp = "10.1.40.0/24"
+
+azure_route = "my-lab-route"
+azure_rt-sub-ext = "to-sub-ext"
+azure_rt-sub-int = "to-sub-int"
+azure_rt-sub-adm = "to-sub-adm"
+azure_natgw = "my-lab-natgw"
+
+azure_pip-nat = "my-lab-natip"
+azure_pip-jmp = "my-lab-jmpip"
+nic-ext-ip-addr = "10.1.10.5"
+nic-int-ip-addr = "10.1.20.5"
+nic-jmp-ip-addr = "10.1.40.5"
+nic-xc-slo-ip-addr = "10.1.10.215"
+nic-xc-sli-ip-addr = "10.1.20.215"
+
+azure_nsg-jmp = "my-lab-nsg-jmp"
+azure_nsg-allow-rdp = "my-lab-nsg-allow-rdp"
+azure_nsg-allow-ssh = "my-lab-nsg-allow-ssh"
+
+azure_nic-ext = "my-lab-nic-ext"
+azure_nic-int = "my-lab-nic-int"
+azure_nic-jmp = "my-lab-nic-jmp"
+azure_nic-xc-slo = "my-lab-nic-xc-slo"
+azure_nic-xc-sli = "my-lab-nic-xc-sli"
+
+azure_nic-ext-ip = "my-lab-ext-ip"
+azure_nic-int-ip = "my-lab-int-ip"
+azure_nic-jmp-ip = "my-lab-jmp-ip"
+azure_nic-xc-slo-ip = "my-lab-xc-slo-ip"
+azure_nic-xc-sli-ip = "my-lab-xc-sli-ip"
+
+azure_ssh-key = "my-lab-ssh-key"
+
+azure_vm-ext = "my-lab-vm-ext"
+azure_vm-int = "my-lab-vm-int"
+azure_vm-jmp = "my-lab-vm-jmp"
+azure_vm-xc-ce = "my-lab-vm-xc-ce"
+
+tls_ssh-key-path-private-win = ".\\my-ssh-key-ed25519"
+tls_ssh-key-path-public-win = ".\\my-ssh-key-ed25519.pub"
+allowed-pips = ["1.2.3.4", "5.6.7.8"]
+
+f5xc_api-p12-file = "<path-of-certificate-file-on-local-machine"
+f5xc_api-url = "https://f5-emea-ent.console.ves.volterra.io/api"
+f5xc_smsv2-site-name = "my-smsv2-site"
+f5xc_smsv2-site-token = "my-smsv2-token"
+f5xc_namespace-name = "<my-xc-namespace>"
