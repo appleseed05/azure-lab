@@ -11,7 +11,7 @@ resource "azurerm_linux_virtual_machine" "tf_azure_vm-ext" {
 
   admin_username                  = var.azure_admin-username
   disable_password_authentication = false
-  admin_password                  = var.azure_admin-password
+  admin_password                  = var.azure_adminpassword
 
   network_interface_ids = [
     azurerm_network_interface.tf_azure_nic-ext.id
@@ -49,7 +49,7 @@ resource "azurerm_linux_virtual_machine" "tf_azure_vm-int" {
 
   admin_username                  = var.azure_admin-username
   disable_password_authentication = false
-  admin_password                  = var.azure_admin-password
+  admin_password                  = var.azure_adminpassword
 
   network_interface_ids = [
     azurerm_network_interface.tf_azure_nic-int.id
@@ -87,7 +87,7 @@ resource "azurerm_linux_virtual_machine" "tf_azure_vm-jmp" {
 
   admin_username                  = var.azure_admin-username
   disable_password_authentication = false
-  admin_password = var.azure_admin-password
+  admin_password = var.azure_adminpassword
 
   network_interface_ids = [
     azurerm_network_interface.tf_azure_nic-jmp.id
