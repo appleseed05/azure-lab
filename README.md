@@ -31,27 +31,29 @@ Certificate password must be configured through OS environnement variable ```VES
 
 Linux VM does allow ssh connection with password. This require a password to be set. For a minimum of security, the password is in an environment variable called ```TF_VAR_azure_adminpassword```. This variable has to be created before launching Terraform deployment.  
 
-# Before deployment  
-After cloning the repo, and before launching the Terraform deployment, you must rename **terraform.tfvars.expl** into **terraform.tfvars**.  
-Then edit **terraform.tfvars** to define relevant value of all variables.  
-Most of those variables have value, but not all (like azure subscritpion details).
-
 # How to deploy  
 1/ Git clone the repo on a machine meeting the requirements.  
 2/ Rename **terraform.tfvars.expl** into **terraform.tfvars**.  
-3/ Edit **terraform.tfvars** to define relevant value of all variables (most of those variables have value, but not all, like azure subscritpion details).  
+3/ Edit **terraform.tfvars** to define relevant value of all variables*.  
 4/ Execute Terraform deployment with command:  
 ```terraform init``` to initialize the project and download Terraform component (based on used provider)  
 ```terraform plan``` to check the deployment  
 ```terraform apply```to launch the deployment if plan is successful  
 
+*:Variables in **terraform.tfvars** must be reviewed before lauching deployment.  
+Variables at the top of this files require to set a value. Others have a value already set but should be review to use suitable values.  
+
 Since all Terraform files are in the same folder, they will all be used to deploy the configuration when running terraform apply.  
 Terraform deployment provide some output, including public IP provided by Azure.  
 
 # How to use  
-After successful deployment, 
+After successful deployment, you should connect to Jumphost VM using SSH or RDP.  
+If connection does not work, please insure that you configure correctly the ```allowed-pips``` variable to define the public IP used by your machine.
 
-This Terraform project has been done and tested on Windows and Linux machine.
+Jumphost machine has access to all the others VM deployed in this Azure VNET.  
+
+This Terraform project has been done and tested on Linux machine.  
+It is also ok on Windows by changing the path of the certificate in variables to match Windows syntaxe (\ instead of /).  
 
 A lot of security shortcut are used in this project. It is for lab purpose only, not for production!
 
