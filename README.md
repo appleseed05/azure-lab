@@ -12,16 +12,16 @@ It includes the following :
 
 # Requierment:
 The script in this repo needs to be run on a machine with following software installed and environment variable defined:  
+* Git
 * Terraform  
-* Azure CLI  
 * Azure subscription (subscription ID and tenant ID)  
 * F5 XC tenant  
 * OS environment variable **VES_P12_PASSWORD** for XC API certificate  
-* OS environment variable **TF_VAR_azure_admin-password** for VM SSH admin password  
+* OS environment variable **TF_VAR_azure_adminpassword** for VM SSH admin password  
 
 Azure authentication:  
-Azure Service Principal is the best option. Terraform provider script includes line for Client ID and Client Secret to use Service Principal.  
-If you don't have Azure Service Principal, you can use interactive authentication with Azure CLI by running ```az login``` command. This command needs to be run on the machine executing Terraform.  
+Azure Service Principal is the best option. Terraform provider script in this repo includes line for Client ID and Client Secret to use Service Principal.  
+If you don't have Azure Service Principal, you can use interactive authentication with Azure CLI by running ```az login``` command. This command needs to be run on the machine executing Terraform. This require to have Azure CLI installed.  
 
 F5 XC authentication:  
 F5 XC auth offer API certificate or API token.  
@@ -29,20 +29,28 @@ XC Customer Edge deployment requires API certificate.
 This certificate needs to be generated before and copied in the same folder as TF files.  
 Certificate password must be configured through OS environnement variable ```VES_P12_PASSWORD```. It will be used 
 
-Linux VM does allow ssh connection with password. This require a password to be set. For a minimum of security, the password is in an environment variable called ```TF_VAR_azure_admin-password```. This variable has to be created before launching Terraform deployment.  
+Linux VM does allow ssh connection with password. This require a password to be set. For a minimum of security, the password is in an environment variable called ```TF_VAR_azure_adminpassword```. This variable has to be created before launching Terraform deployment.  
+
+# Before deployment  
+Before launching the Terraform deployment, you must car about variable values.  
+Those variable values are stored in **terraform.tfvars**.  
+This repo brings an example of this file and is called **terraform.tfvars.expl**.
 
 
-# How to use  
-Git clone the repo on a machine meeting the requirements.  
-Then go in the folder to execute Terraform command:  
-```terraform init``` to initialize the project and download Terraform component (based on provider)  
+# How to deploy  
+1/ Git clone the repo on a machine meeting the requirements.  
+2/ Then go in the folder to execute Terraform command:  
+```terraform init``` to initialize the project and download Terraform component (based on used provider)  
 ```terraform plan``` to check the deployment  
 ```terraform apply```to launch the deployment if plan is successful  
 
-This Terraform project has been done and tested on Windows machine. Some adapation is needed for Mac or Linux. Especially for the environment variable to store admin password and path of SSH keys.
+Since all Terraform files are in the same folder, they will all be used to deploy the configuration when running terraform apply.  
+Terraform deployment provide some output, including public IP provided by Azure.  
 
-Authentication on Azure subscription is done manually with Azure CLI before launching Terraform script.
-Using Azure Service Principal is better, but require some permission to configure.
+# How to use  
+After successful deployment, 
+
+This Terraform project has been done and tested on Windows and Linux machine.
 
 A lot of security shortcut are used in this project. It is for lab purpose only, not for production!
 
