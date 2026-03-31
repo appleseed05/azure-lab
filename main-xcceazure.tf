@@ -8,7 +8,7 @@ resource "azurerm_linux_virtual_machine" "tf_f5xc_vm-xc-ce" {
 # is this user name mandatory?
   admin_username                  = "cloud-user"
   disable_password_authentication = false
-  admin_password                  = var.azure_admin-password
+  admin_password                  = var.azure_adminpassword
 
 
   boot_diagnostics {
